@@ -41,6 +41,12 @@ public class Main_controller {
 		return "HELLO "+ name.toUpperCase();
 	} 
 	
+	@GetMapping(path = "/add/{num1}/{num2}")
+	public int addTwoNumbers(@PathVariable int num1, @PathVariable int num2) {
+		
+		return num1+num2;
+	} 
+	
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 
